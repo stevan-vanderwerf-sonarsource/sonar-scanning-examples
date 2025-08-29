@@ -19,6 +19,9 @@ steps:
 # Dotnet build task
 - task: DotNetCoreCLI@2
   displayName: 'dotnet build'
+  inputs:
+    command: 'build'
+    projects: 'SomeConsoleApplication.sln'
 
 # Run Code Analysis task
 - task: SonarQubeAnalyze@7
