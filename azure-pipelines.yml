@@ -12,7 +12,7 @@ steps:
 # Prepare Analysis Configuration task
 - task: SonarQubePrepare@7
   inputs:
-    SonarQube: 'https://33ad48fa4633.ngrok.app'
+    SonarQube: 'sq202542'
     scannerMode: 'dotnet'
     projectKey: 'stevandotnet'
 
