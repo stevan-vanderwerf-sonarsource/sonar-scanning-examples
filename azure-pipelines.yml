@@ -15,15 +15,10 @@ steps:
     SonarQube: 'sq202542'
     scannerMode: 'dotnet'
     projectKey: 'stevandotnet'
-    extraProperties: 
-      sonar.projectBaseDir=sonar-scanner-dotnet/CSharpProject
 
 # Dotnet build task
 - task: DotNetCoreCLI@2
   displayName: 'dotnet build'
-  inputs:
-    command: 'build'
-    projects: 'sonar-scanner-dotnet/CSharpProject/SomeConsoleApplication.sln'
 
 # Run Code Analysis task
 - task: SonarQubeAnalyze@7
