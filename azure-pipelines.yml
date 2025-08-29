@@ -15,6 +15,10 @@ steps:
     SonarQube: 'sq202542'
     scannerMode: 'dotnet'
     projectKey: 'stevandotnet'
+    projectName:
+    projectVersion:
+    cliSources: 
+    extraProperties: 
 
 # Dotnet build task
 - task: DotNetCoreCLI@2
