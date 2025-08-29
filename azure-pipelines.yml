@@ -1,0 +1,29 @@
+trigger:
+- master # or the name of your main branch
+- feature/*
+
+steps:
+ # Checkout the repository 
+- checkout: self
+
+ # Disable shallow fetch
+  fetchDepth: 0
+
+# Prepare Analysis Configuration task
+- task: SonarQubePrepare@7
+  inputs:
+    SonarQube: 'https://33ad48fa4633.ngrok.app'
+    scannerMode: 'dotnet'
+    projectKey: 'stevandotnet'
+
+# Dotnet build task
+- task: DotNetCoreCLI@2
+  displayName: 'dotnet build'
+
+# Run Code Analysis task
+- task: SonarQubeAnalyze@7
+
+# Publish Quality Gate Result task
+- task: SonarQubePublish@7
+  inputs:
+    pollingTimeoutSec: '300'
